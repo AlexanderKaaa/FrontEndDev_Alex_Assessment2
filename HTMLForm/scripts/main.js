@@ -122,6 +122,13 @@ var howYouFindUsVal=document.getElementById('howYouFindUS').value;
   for(var i=0;i<errorArray.length;i++){document.getElementById('message').innerHTML+="<p>"+ errorArray[i] +"</p>";}
   //for(var i=0;i<errorArray.length;i++){$("#message").html()+="<p>"+ errorArray[i] +"</p>";}
 
+  //AJAX Post
+  
+  $.post('/AddEntry', {FirstName: firstNameValue, lasttName:lastNameValue, Email:emailAddressValue, HowYouFoundUs:howYouFindUsVal, WhyBuyaBlender:whyBlenderVal} , function(response){
+        
+    });
+  
+  
     }
 	
 	
