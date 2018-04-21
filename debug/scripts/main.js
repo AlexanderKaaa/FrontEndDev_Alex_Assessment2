@@ -45,7 +45,7 @@ $(function () {
         /*invalid should add a red border around the respective input
             It will also show a hidden error message */
         if (firstNameValue === '') {
-            firstName.addClass('invalid');
+            firstName.addClass('myInvalidClass');
 
             var parentDiv1 = firstName.closest('.input-group');
             var errorSpan1 = parentDiv1.find('.errors');
@@ -53,7 +53,7 @@ $(function () {
         }
 
         if (lastNameValue ==='') {
-            lastName.addClass('invalid');
+            lastName.addClass('myInvalidClass');
 
             var parentDiv2 = lastName.closest('.input-group');
             var errorSpan2= parentDiv2.find('.errors');
