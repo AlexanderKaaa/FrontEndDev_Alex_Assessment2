@@ -34,30 +34,34 @@ $(function () {
     $('#btnMake').on('click', build);
 
     function build() {
-		//debugger;
+	
         var firstName = $('#firstName');
+		
         var firstNameValue = firstName.val('Whoops');
-
+		
 
         var lastName = $('#lastName');
+		
         var lastNameValue = lastName.val("");
+
+		
 
         /*invalid should add a red border around the respective input
             It will also show a hidden error message */
-        if (firstNameValue === '') {
-            firstName.addClass('myInvalidClass');
+        if ($('#firstName').val() === "") {
+            firstName.addClass('invalid');
+			
 
-            var parentDiv1 = firstName.closest('.input-group');
-            var errorSpan1 = parentDiv1.find('.errors');
-            errorSpan1.show();
+          
+			$('#firstName').closest('.input-group').find('.errors').show();
         }
 
-        if (lastNameValue ==='') {
-            lastName.addClass('myInvalidClass');
+        if ($('#lastName').val() === "") {
+            lastName.addClass('invalid');
+				//console.log("LName Error");
 
-            var parentDiv2 = lastName.closest('.input-group');
-            var errorSpan2= parentDiv2.find('.errors');
-            errorSpan2.show();
+          
+			$('#lastName').closest('.input-group').find('.errors').show();
         }
 
 
