@@ -35,32 +35,33 @@ $(function () {
 
     function build() {
 	
-        var firstName = $('#firstName');
+        //Grabs value of item with ID of firstname
+		var firstName = $('#firstName').val();
 		
-        var firstNameValue = firstName.val('Whoops');
 		
-
-        var lastName = $('#lastName');
+		 //Grabs value of item with ID of lastname
+        var lastName = $('#lastName').val();
 		
-        var lastNameValue = lastName.val("");
 
 		
 
         /*invalid should add a red border around the respective input
             It will also show a hidden error message */
-        if ($('#firstName').val() === "") {
-            firstName.addClass('invalid');
+       //checks if value is equal to empty string
+	   if ($('#firstName').val() === "") {
+           //adds class of invalid
+		   $('#firstName').addClass('invalid');
 			
 
-          
+          //searches for parent of ID with class of input-group. and finds item with class of errors in that item. JQuerry shows the item with default parameters 
 			$('#firstName').closest('.input-group').find('.errors').show();
         }
+    //checks if value is equal to empty string
+        if (lastName === "") {
+            $('#lastName').addClass('invalid');
+				
 
-        if ($('#lastName').val() === "") {
-            lastName.addClass('invalid');
-				//console.log("LName Error");
-
-          
+           //searches for parent of ID with class of input-group. and finds item with class of errors in that item. JQuerry shows the item with default parameters 
 			$('#lastName').closest('.input-group').find('.errors').show();
         }
 
@@ -73,15 +74,22 @@ $(function () {
 
 		
         var userObject = {
-            firstName: "Cat" ,
-            lastName:"Kat" ,
-            fullName: function() {
+            //Jquerry used to get value of ids of  firstname and lastname fields 
+			firstName: firstName,
+			//firstName: $('#firstName').val(),
+            lastName:lastName,
+			//lastName:$('#lastName').val(),
+           //function combines first and last name object properties with and empty space string
+		   fullName: function() {
                 return this.firstName + ' ' + this.lastName;
             },
-            state: $('#state').get()
+            //Jquerry used to get value of ids of  state fields 
+			state: $('#state').val()
         };
 		
+		//console logs the fullname and object 
 		console.log(userObject.fullName());
+		console.log(userObject.state);
         console.log(userObject);
 		
 
