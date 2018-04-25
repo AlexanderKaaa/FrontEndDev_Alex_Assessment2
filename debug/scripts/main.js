@@ -74,11 +74,11 @@ $(function () {
 
 		
         var userObject = {
-            //Jquerry used to get value of ids of  firstname and lastname fields 
+            //firstname and lastname variables are assigned to the object  
 			firstName: firstName,
-			//firstName: $('#firstName').val(),
+			
             lastName:lastName,
-			//lastName:$('#lastName').val(),
+		
            //function combines first and last name object properties with and empty space string
 		   fullName: function() {
                 return this.firstName + ' ' + this.lastName;
@@ -89,7 +89,7 @@ $(function () {
 		
 		//console logs the fullname and object 
 		console.log(userObject.fullName());
-		console.log(userObject.state);
+		//console.log(userObject.state);
         console.log(userObject);
 		
 
@@ -154,8 +154,11 @@ Write sumArray function here
 */
 //debugger;
 function sumArray(inputArray){
+	//creates and arrayValue variable and sets it to 0
 	var arrayValue=0;
+	//creates a tempArray value that is equal to inputArray
 	var temArray=inputArray;
+	//for loop that adds array values for each item in array
 	for (i=0; i<temArray.length; i++)
 	{
 	arrayValue+=temArray[i];
@@ -259,7 +262,7 @@ console.log(newD); //outputs Sun Jun 06 2004 00:00:00 GMT-0500 (Central Daylight
 Write sortArray function here
 */
 function sortArray(input){
-	
+	//sorts array from smallest to biggest using sort function
 	input.sort(function(a, b){return a - b});
 	return input; 
 }
